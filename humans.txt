@@ -3,11 +3,9 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <Abhishek> -- < web / software developer > -- < mr.kumar.abhishek@email.com >
 
-# THANKS
 
-    <name>
 
 # TECHNOLOGY COLOPHON
 
