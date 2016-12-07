@@ -38,6 +38,13 @@ body {
 	box-shadow: 4px 2px 7px black;
 }
 
+.widgets p {
+	color: #343f61;
+    line-height: 90px;
+    font-weight: 800;
+    font-size: 2em;
+    text-align: center;
+}
 
 
 
