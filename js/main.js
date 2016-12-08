@@ -29,7 +29,7 @@ function load_weather(location) {
 		cel = w.temp;
 		far = w.alt.temp;
 		icon_code = w.code;
-		icon = w_code_icon(icon_code);
+		icon = w_code_icon(parseInt(icon_code));
 		$("#weather-sym").html("<i class='wi " + icon + "'></i>"); 
 		$("#temp").html("<p>" + w.temp + " &deg; C </p>");
 		$("#location").html("<p>" + w.city +  " / " + w.region + "</p>" ); 
