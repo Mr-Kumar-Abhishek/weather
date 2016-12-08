@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="weather-icons/css/weather-icons.min.css">
+        <link rel="stylesheet" href="weather-icons/css/weather-icons-wind.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -31,24 +33,29 @@
 			<h2>Local Weather App</h2>
         </div>
       </div>
+      <div id="weather-sign" class="row">
+        <div class="col-xs-12 text-center">
+			<h2 id="weather-sym"></h2>
+        </div>
+      </div>
       <div id="weather-data" class="row">
 			<div class="col-xs-12 col-md-4">
-				<div id="location" class="widgets">
-				</div>
+				<button id="location" class="widgets">
+				</button>
 			</div>
 			<div  class="col-xs-12 col-md-4">
-				<div id="weather" class="widgets">
-				</div>
+				<button id="weather" class="widgets">
+				</button>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				<div id="temp" class="widgets">
-				</div>
+				<button id="temp" class="widgets">
+				</button>
 			</div>
       </div>
       <div id="aww-snap" class="row text-center">
         <div class="col-xs-12">
             <h2><i class="fa fa-frown-o" aria-hidden="true"></i></h2>
-            <h2>Aww, snap ! <br>  No Geo Location in your Browser</h2>
+            <h2>Aww, snap ! <br>  Something went wrong !</h2>
         </div>
       </div>
 
