@@ -7,7 +7,8 @@
 
 
 html {
-	background: url(https://res.cloudinary.com/mr-kumar-abhishek/image/upload/v1480978733/weather/ayzvdai5upk-adrian_sqo24i.jpg) no-repeat center fixed;
+	background: url(https://res.cloudinary.com/mr-kumar-abhishek/image/upload/v1481324495/weather/not-available.jpg) no-repeat center fixed;
+	background-size: cover;
 }
 
 body {
