@@ -48,67 +48,67 @@ function set_background(read, count){
 	reading = read.toLowerCase();
 	console.log(count);
 	if (reading.match("cold")) { 
-		$("#main").addClass("cold"); 
+		$("html").addClass("cold"); 
 	}
 	else if (reading.match("sleet")) { 
-		$("#main").addClass("sleet");
+		$("html").addClass("sleet");
 	}	
 	else if (count == 30){		// partly cloudy
-		$("#main").addClass("clear-day");
+		$("html").addClass("clear-day");
 	}
 	else if (reading.match("hot")){
-		$("#main").addClass("hot");
+		$("html").addClass("hot");
 	}
 	else if (reading.match("smokey")){
-		$("#main").addClass("smokey");
+		$("html").addClass("smokey");
 	}
 	else if (reading.match("foggy") || reading.match("haze")){
-		$("#main").addClass("foggy");
+		$("html").addClass("foggy");
 	}
 	else if (count == 33){
-		$("#main").addClass("fair-night");
+		$("html").addClass("fair-night");
 	}
 	else if (count == 34 ){
-		$("#main").addClass("fair-day");
+		$("html").addClass("fair-day");
 	}
 	else if (reading.match("thunderstrom")){
-		$("#main").addClass("thunderstroms");
+		$("html").addClass("thunderstroms");
 	}
 	else if (reading.match("hail")){
-		$("#main").addClass("hail");
+		$("html").addClass("hail");
 	}
 	else if (reading.match("smokey")){
-		$("#main").addClass("smokey");
+		$("html").addClass("smokey");
 	}
 	else if (reading.match("drizzle")){
-		$("#main").addClass("drizzle");
+		$("html").addClass("drizzle");
 	}
 	else if (reading.match("rain")){
-		$("#main").addClass("rain");
+		$("html").addClass("rain");
 	}
 	else if (reading.match("windy")){
-		$("#main").addClass("windy");
+		$("html").addClass("windy");
 	}
 	else if (reading.match("dust")){
-		$("#main").addClass("dust");
+		$("html").addClass("dust");
 	}
 	else if (reading.match("thundershower")){
-		$("#main").addClass("thundershowers");
+		$("html").addClass("thundershowers");
 	}
 	else if (reading.match("snow")){
-		$("#main").addClass("snow");
+		$("html").addClass("snow");
 	}
 	else if (count == 31){
-		$("#main").addClass("clear-night");
+		$("html").addClass("clear-night");
 	}
 	else if (reading.match("sunny")){
-		$("#main").addClass("sunny");
+		$("html").addClass("sunny");
 	}
 	else if (count == 28 ){
-		$("#main").addClass("cloudy-day");
+		$("html").addClass("cloudy-day");
 	}
 	else if (count == 27 || count == 29){
-		$("#main").addClass("cloudy-night");
+		$("html").addClass("cloudy-night");
 	}
 }
 
