@@ -133,6 +133,7 @@ body {
 	background: rgba(255, 255, 255, 0.80);
 	border-radius: 15px;
 	min-height: 100px;
+	height: 288px;
 	margin: 15px;
 	margin-left: 40px;
 	margin-right: 40px;
@@ -146,6 +147,7 @@ body {
     font-weight: 800;
     font-size: 2em;
     text-align: center;
+    margin: 0;
 }
 
 #weather-sign {
