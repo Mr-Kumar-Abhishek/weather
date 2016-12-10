@@ -4,11 +4,27 @@ var icon;
 var icon_code;
 var t_toggle = 0;
 
+$('#temp').textfill({
+   innerTag: 'p'
+});
+
+$('#location').textfill({
+   innerTag: 'p'
+});
+
+$('#weather').textfill({
+   innerTag: 'p'
+});
+
+
 if ("geolocation" in navigator) {
 	$("#weather-data").show();
 	/*	navigator.geolocation.getCurrentPosition(function(position) {
 		load_weather(position.coords.latitude+','+position.coords.longitude);}); */
-		load_weather("30.2676,-97.74298");
+		
+	//	load_weather("30.2676,-97.74298");
+		load_weather("74.4021654064362, -49.765663146972656");
+		
 		$("#temp").click(toggle_temp);
 }else {
 	$("#aww-snap").show();
@@ -28,8 +44,9 @@ function load_weather(location) {
 		console.log(w.alt.temp);
 		cel = w.temp;
 		far = w.alt.temp;
-		icon_code = w.code;
-		icon = w_code_icon(parseInt(icon_code));
+		icon_code = parseInt(w.code);
+		icon = w_code_icon(icon_code);
+		set_background(w.currently, icon_code);
 		$("#weather-sym").html("<i class='wi " + icon + "'></i>"); 
 		$("#temp").html("<p>" + w.temp + " &deg; C </p>");
 		$("#location").html("<p>" + w.city +  " / " + w.region + "</p>" ); 
@@ -41,6 +58,74 @@ function load_weather(location) {
 		$("#aww-snap").show();
     }
   });
+}
+
+function set_background(read, count){
+	reading = read.toLowerCase();
+	console.log(count);
+	if (reading.match("cold")) { 
+		$("html").addClass("cold"); 
+	}
+	else if (reading.match("sleet")) { 
+		$("html").addClass("sleet");
+	}	
+	else if (count == 30){		// partly cloudy
+		$("html").addClass("clear-day");
+	}
+	else if (reading.match("hot")){
+		$("html").addClass("hot");
+	}
+	else if (reading.match("smokey")){
+		$("html").addClass("smokey");
+	}
+	else if (reading.match("foggy") || reading.match("haze")){
+		$("html").addClass("foggy");
+	}
+	else if (count == 33){
+		$("html").addClass("fair-night");
+	}
+	else if (count == 34 ){
+		$("html").addClass("fair-day");
+	}
+	else if (reading.match("thunderstrom")){
+		$("html").addClass("thunderstroms");
+	}
+	else if (reading.match("hail")){
+		$("html").addClass("hail");
+	}
+	else if (reading.match("smokey")){
+		$("html").addClass("smokey");
+	}
+	else if (reading.match("drizzle")){
+		$("html").addClass("drizzle");
+	}
+	else if (reading.match("rain")){
+		$("html").addClass("rain");
+	}
+	else if (reading.match("windy")){
+		$("html").addClass("windy");
+	}
+	else if (reading.match("dust")){
+		$("html").addClass("dust");
+	}
+	else if (reading.match("thundershower")){
+		$("html").addClass("thundershowers");
+	}
+	else if (reading.match("snow")){
+		$("html").addClass("snow");
+	}
+	else if (count == 31){
+		$("html").addClass("clear-night");
+	}
+	else if (reading.match("sunny")){
+		$("html").addClass("sunny");
+	}
+	else if (count == 28 ){
+		$("html").addClass("cloudy-day");
+	}
+	else if (count == 27 || count == 29){
+		$("html").addClass("cloudy-night");
+	}
 }
 
 function toggle_temp() {
