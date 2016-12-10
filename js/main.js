@@ -28,8 +28,9 @@ function load_weather(location) {
 		console.log(w.alt.temp);
 		cel = w.temp;
 		far = w.alt.temp;
-		icon_code = w.code;
-		icon = w_code_icon(parseInt(icon_code));
+		icon_code = parseInt(w.code);
+		icon = w_code_icon(icon_code);
+		set_background(w.currently, icon_code);
 		$("#weather-sym").html("<i class='wi " + icon + "'></i>"); 
 		$("#temp").html("<p>" + w.temp + " &deg; C </p>");
 		$("#location").html("<p>" + w.city +  " / " + w.region + "</p>" ); 
@@ -41,6 +42,74 @@ function load_weather(location) {
 		$("#aww-snap").show();
     }
   });
+}
+
+function set_background(read, count){
+	reading = read.toLowerCase();
+	console.log(count);
+	if (reading.match("cold")) { 
+		$("#main").addClass("cold"); 
+	}
+	else if (reading.match("sleet")) { 
+		$("#main").addClass("sleet");
+	}	
+	else if (count == 30){		// partly cloudy
+		$("#main").addClass("clear-day");
+	}
+	else if (reading.match("hot")){
+		$("#main").addClass("hot");
+	}
+	else if (reading.match("smokey")){
+		$("#main").addClass("smokey");
+	}
+	else if (reading.match("foggy") || reading.match("haze")){
+		$("#main").addClass("foggy");
+	}
+	else if (count == 33){
+		$("#main").addClass("fair-night");
+	}
+	else if (count == 34 ){
+		$("#main").addClass("fair-day");
+	}
+	else if (reading.match("thunderstrom")){
+		$("#main").addClass("thunderstroms");
+	}
+	else if (reading.match("hail")){
+		$("#main").addClass("hail");
+	}
+	else if (reading.match("smokey")){
+		$("#main").addClass("smokey");
+	}
+	else if (reading.match("drizzle")){
+		$("#main").addClass("drizzle");
+	}
+	else if (reading.match("rain")){
+		$("#main").addClass("rain");
+	}
+	else if (reading.match("windy")){
+		$("#main").addClass("windy");
+	}
+	else if (reading.match("dust")){
+		$("#main").addClass("dust");
+	}
+	else if (reading.match("thundershower")){
+		$("#main").addClass("thundershowers");
+	}
+	else if (reading.match("snow")){
+		$("#main").addClass("snow");
+	}
+	else if (count == 31){
+		$("#main").addClass("clear-night");
+	}
+	else if (reading.match("sunny")){
+		$("#main").addClass("sunny");
+	}
+	else if (count == 28 ){
+		$("#main").addClass("cloudy-day");
+	}
+	else if (count == 27 || count == 29){
+		$("#main").addClass("cloudy-night");
+	}
 }
 
 function toggle_temp() {
